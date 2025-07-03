@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Cumpleaños Mayo</title>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(45deg, #ffb6c1, #ffe4ec, #ff8fab, #ffb3d9);
+        background-size: 400% 400%;
+        animation: bgShift 8s ease infinite;
+        font-family: 'Georgia', serif;
+        overflow-x: hidden;
+    }
+    @keyframes bgShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    .rose-animation {
+        position: fixed;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        pointer-events: none;
+        z-index: 10;
+    }
+    .rose {
+        font-size: 2.5rem;
+        margin: 0 1vw;
+        opacity: 0;
+        animation: fallRoses 2.5s ease-in-out forwards;
+    }
+    @keyframes fallRoses {
+        0% { opacity: 0; transform: translateY(-80px) scale(0.7) rotate(-20deg); }
+        30% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { opacity: 0; transform: translateY(80vh) scale(1.2) rotate(20deg); }
+    }
+    .mensaje-cumple {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.85);
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(233,30,99,0.15);
+        padding: 2.5rem 2rem;
+        max-width: 420px;
+        margin: 2rem auto;
+        border: 2px solid #e91e63;
+        z-index: 20;
+        animation: fadeInMsg 1.2s ease;
+        text-align: center;
+    }
+    .btn-sorpresa {
+        background: linear-gradient(45deg, #ff1744, #ff4081, #e91e63);
+        color: white;
+        padding: 14px 32px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 40px;
+        cursor: pointer;
+        margin-top: 1rem;
+        box-shadow: 0 6px 16px rgba(255, 23, 68, 0.25);
+        transition: all 0.3s ease;
+    }
+    .pagina-tarjetas {
+        display: none;
+        width: 100%;
+        padding: 3rem 1rem 2rem 1rem;
+        background: linear-gradient(45deg, #ffe4ec 60%, #ffb6c1 100%);
+        overflow-y: auto;
+        max-height: 100vh;
+    }
+    .tarjeta-mensaje {
+        background: linear-gradient(135deg, #fff0f6 80%, #ffe4ec 100%);
+        color: #b71c50;
+        border-radius: 20px;
+        padding: 1.7rem 1.2rem;
+        font-size: 1.08rem;
+        box-shadow: 0 4px 18px rgba(233,30,99,0.10);
+        border: 2px solid #ffb6c1;
+        text-align: center;
+        max-width: 420px;
+        width: 90vw;
+        margin: 1.1rem auto;
+    }
+    .corazon-fotos {
+        position: relative;
+        width: 320px;
+        height: 280px;
+        margin: 2rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .corazon-fotos img {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border: 3px solid #ffb6c1;
+        object-fit: cover;
+        clip-path: path('M40 72 C10 52, 0 30, 20 18 C35 8, 50 20, 50 32 C50 20, 65 8, 80 18 C100 30, 90 52, 60 72 Z');
+        /* Forma de corazón SVG, ajustada al tamaño de 80x80 */
+        background: #fff;
+    }
+    .corazon-fotos img:nth-child(1) { top: 0; left: 120px; }
+    .corazon-fotos img:nth-child(2) { top: 40px; left: 40px; }
+    .corazon-fotos img:nth-child(3) { top: 40px; left: 200px; }
+    .corazon-fotos img:nth-child(4) { top: 130px; left: 0px; }
+    .corazon-fotos img:nth-child(5) { top: 130px; left: 240px; }
+    .corazon-fotos img:nth-child(6) { top: 200px; left: 120px; }
+</style>
+</head>
+<body>
+<audio id="cancionFondo" src="QueDiosTeBendiga.mp3" loop></audio>
+<div class="rose-animation" id="roseAnimation">
+    <span class="rose">🌹</span><span class="rose">🌹</span><span class="rose">🌹</span>
+</div>
+<div class="mensaje-cumple" id="mensajeCumple" style="display:none;">
+    <h1>¡Feliz Cumpleaños, Mayo!</h1>
+    <h2>Para ti 💖</h2>
+    <p>Hoy celebramos la vida de una persona maravillosa.<br>Que cada rosa de este día te recuerde lo especial que eres para mí.<br>¡Te quiero mucho, Mayo!<br>🌹🌹🌹</p>
+    <button class="btn-sorpresa" onclick="mostrarTarjetas()">Presiona aquí</button>
+</div>
+<div class="pagina-tarjetas" id="paginaTarjetas">
+    <div class="corazon-fotos">
+        <img src="foto1.jpg" alt="Foto 1">
+        <img src="foto2.jpg" alt="Foto 2">
+        <img src="foto3.jpg" alt="Foto 3">
+        <img src="foto4.jpg" alt="Foto 4">
+        <img src="foto5.jpg" alt="Foto 5">
+        <img src="foto6.jpg" alt="Foto 6">
+    </div>
+    <div class="tarjeta-mensaje"><h3>🌟 Eres única 🌟</h3><p>No existe nadie como tú en este mundo. Tu personalidad, tu risa, tu forma de ser... todo en ti es especial y único.</p></div>
+    <div class="tarjeta-mensaje"><h3>🌈 Iluminas mi vida 🌈</h3><p>Cada día contigo es una aventura maravillosa. Tu presencia transforma los momentos ordinarios en extraordinarios.</p></div>
+    <div class="tarjeta-mensaje"><h3>💎 Vales más que cualquier tesoro 💎</h3><p>Tu amistad, tu cariño y tu corazón bondadoso son los regalos más preciados que alguien puede tener.</p></div>
+    <div class="tarjeta-mensaje"><h3>🦤 Sigues volando alto 🦤</h3><p>Admiro tu fuerza, tu determinación y cómo siempre encuentras la manera de salir adelante con una sonrisa.</p></div>
+    <div class="tarjeta-mensaje"><h3>🌸 Que este año sea mágico 🌸</h3><p>Que cada día de este nuevo año esté lleno de sorpresas hermosas, logros increíbles y momentos de pura felicidad.</p></div>
+    <div class="tarjeta-mensaje"><h3>💝 Gracias por existir 💝</h3><p>El mundo es un lugar mejor porque tú estás en él. Gracias por ser esa persona maravillosa que alegra la vida de todos.</p></div>
+    <button class="btn-sorpresa" onclick="cerrarTarjetas()">Cerrar mensajes 💕</button>
+</div>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.getElementById('roseAnimation').style.display = 'none';
+        document.getElementById('mensajeCumple').style.display = 'flex';
+    }, 3500);
+});
+function mostrarTarjetas() {
+    document.getElementById('mensajeCumple').style.display = 'none';
+    document.getElementById('paginaTarjetas').style.display = 'block';
+    reproducirCancion();
+    window.scrollTo(0, 0);
+}
+function cerrarTarjetas() {
+    document.getElementById('paginaTarjetas').style.display = 'none';
+    document.getElementById('mensajeCumple').style.display = 'flex';
+    window.scrollTo(0, 0);
+}
+function reproducirCancion() {
+    const cancion = document.getElementById('cancionFondo');
+    cancion.play().catch(err => console.log("Navegador bloqueó la reproducción:", err));
+}
+</script>
+</body>
+</html>
