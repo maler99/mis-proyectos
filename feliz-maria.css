@@ -1,0 +1,200 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #ffb6c1, #ffe4ec, #ff8fab, #ffb3d9);
+    background-size: 400% 400%;
+    animation: bgShift 8s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+}
+
+@keyframes bgShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.rose-animation {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    pointer-events: none;
+    z-index: 10;
+}
+.rose {
+    font-size: 2.5rem;
+    margin: 0 1vw;
+    opacity: 0;
+    animation: fallRoses 2.5s ease-in-out forwards;
+}
+.rose:nth-child(1) { animation-delay: 0s; }
+.rose:nth-child(2) { animation-delay: 0.2s; }
+.rose:nth-child(3) { animation-delay: 0.4s; }
+.rose:nth-child(4) { animation-delay: 0.6s; }
+.rose:nth-child(5) { animation-delay: 0.8s; }
+.rose:nth-child(6) { animation-delay: 1s; }
+.rose:nth-child(7) { animation-delay: 1.2s; }
+.rose:nth-child(8) { animation-delay: 1.4s; }
+.rose:nth-child(9) { animation-delay: 1.6s; }
+
+@keyframes fallRoses {
+    0% { opacity: 0; transform: translateY(-80px) scale(0.7) rotate(-20deg); }
+    30% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(80vh) scale(1.2) rotate(20deg); }
+}
+
+.mensaje-cumple {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.85);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(233,30,99,0.15);
+    padding: 2.5rem 2rem;
+    max-width: 420px;
+    margin: 2rem;
+    border: 2px solid #e91e63;
+    z-index: 20;
+    animation: fadeInMsg 1.2s ease;
+}
+.mensaje-cumple h1 {
+    color: #e91e63;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 8px #fff2f7;
+}
+.mensaje-cumple h2 {
+    color: #ff4081;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+}
+.mensaje-cumple p {
+    color: #b71c50;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.7;
+}
+@keyframes fadeInMsg {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+.btn-sorpresa {
+    background: linear-gradient(45deg, #ff1744, #ff4081, #e91e63);
+    color: white;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin: 1.5rem 0 0.5rem 0;
+    box-shadow: 0 6px 16px rgba(255, 23, 68, 0.25);
+    transition: all 0.3s ease;
+    animation: btnGlow 2.5s ease-in-out infinite;
+}
+.btn-sorpresa:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 10px 24px rgba(255, 23, 68, 0.35);
+}
+@keyframes btnGlow {
+    0%, 100% { box-shadow: 0 6px 16px rgba(255, 23, 68, 0.25); }
+    50% { box-shadow: 0 6px 24px rgba(255, 64, 129, 0.35); }
+}
+.mensajes-sorpresa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.2rem;
+    gap: 0.7rem;
+    animation: fadeInMsg 1.2s ease;
+}
+.mensaje-sorpresa {
+    background: linear-gradient(135deg, #fff0f6 80%, #ffe4ec 100%);
+    color: #b71c50;
+    border-radius: 16px;
+    padding: 1rem 1.2rem;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 8px rgba(233,30,99,0.08);
+    border: 1.5px solid #ffb6c1;
+    text-align: center;
+    max-width: 320px;
+    width: 90vw;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: showMsg 0.7s ease forwards;
+}
+.mensajes-sorpresa .mensaje-sorpresa:nth-child(1) { animation-delay: 0.1s; }
+.mensajes-sorpresa .mensaje-sorpresa:nth-child(2) { animation-delay: 0.3s; }
+.mensajes-sorpresa .mensaje-sorpresa:nth-child(3) { animation-delay: 0.5s; }
+.mensajes-sorpresa .mensaje-sorpresa:nth-child(4) { animation-delay: 0.7s; }
+.mensajes-sorpresa .mensaje-sorpresa:nth-child(5) { animation-delay: 0.9s; }
+.pagina-tarjetas {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    width: 100vw;
+    background: linear-gradient(45deg, #ffe4ec 60%, #ffb6c1 100%);
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 100;
+    padding: 3rem 1rem 2rem 1rem;
+    overflow-y: auto;
+    animation: fadeInMsg 1s;
+}
+.tarjeta-mensaje {
+    background: linear-gradient(135deg, #fff0f6 80%, #ffe4ec 100%);
+    color: #b71c50;
+    border-radius: 20px;
+    padding: 1.7rem 1.2rem;
+    font-size: 1.08rem;
+    box-shadow: 0 4px 18px rgba(233,30,99,0.10);
+    border: 2px solid #ffb6c1;
+    text-align: center;
+    max-width: 420px;
+    width: 90vw;
+    margin: 1.1rem 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: showMsg 0.7s ease forwards;
+}
+.pagina-tarjetas .tarjeta-mensaje:nth-child(1) { animation-delay: 0.1s; }
+.pagina-tarjetas .tarjeta-mensaje:nth-child(2) { animation-delay: 0.3s; }
+.pagina-tarjetas .tarjeta-mensaje:nth-child(3) { animation-delay: 0.5s; }
+.pagina-tarjetas .tarjeta-mensaje:nth-child(4) { animation-delay: 0.7s; }
+.pagina-tarjetas .tarjeta-mensaje:nth-child(5) { animation-delay: 0.9s; }
+.pagina-tarjetas .tarjeta-mensaje:nth-child(6) { animation-delay: 1.1s; }
+.close-btn {
+    background: linear-gradient(45deg, #4caf50, #81c784);
+    border: none;
+    color: white;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    margin: 2.2rem 0 1rem 0;
+    align-self: center;
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.18);
+    transition: all 0.3s ease;
+}
+.close-btn:hover {
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 10px 24px rgba(76, 175, 80, 0.28);
+}
+@media (max-width: 600px) {
+    .mensaje-cumple { padding: 1.2rem 0.5rem; max-width: 98vw; }
+    .mensaje-cumple h1 { font-size: 1.3rem; }
+    .mensaje-cumple h2 { font-size: 1rem; }
+    .rose { font-size: 1.5rem; }
+    .pagina-tarjetas { padding: 1.2rem 0.2rem; }
+    .tarjeta-mensaje { padding: 1rem 0.5rem; max-width: 98vw; }
+}
