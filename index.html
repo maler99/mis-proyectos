@@ -79,26 +79,56 @@
         max-height: 100vh;
     }
     .tarjeta-mensaje {
-<<<<<<< HEAD
+.tarjeta-mensaje {
+    background: linear-gradient(135deg, rgba(255, 240, 246, 0.9) 80%, rgba(255, 228, 236, 0.9) 100%);
+    color: #b71c50;
+    border-radius: 20px;
+    padding: 1.7rem 1.2rem;
+    font-size: 1.08rem;
+    box-shadow: 0 4px 18px rgba(233,30,99,0.15);
+    border: 2px solid #ffb6c1;
+    text-align: center;
+    max-width: 420px;
+    width: 90vw;
+    margin: 1.1rem auto;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(.23,1.01,.32,1);
+    will-change: transform;
+}
+.tarjeta-mensaje.foto4 {
+    position: relative;
+}
+.tarjeta-mensaje.foto4::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.45);
+    z-index: 1;
+    pointer-events: none;
+}
+.tarjeta-mensaje.foto4 > * {
+    position: relative;
+    z-index: 2;
+}
         background: linear-gradient(135deg, rgba(255, 240, 246, 0.9) 80%, rgba(255, 228, 236, 0.9) 100%);
-=======
-        background: linear-gradient(135deg, #fff0f6 80%, #ffe4ec 100%);
->>>>>>> 9c828db61f6afaea3458b3636e225811e952b3bd
         color: #b71c50;
         border-radius: 20px;
         padding: 1.7rem 1.2rem;
         font-size: 1.08rem;
-<<<<<<< HEAD
         box-shadow: 0 4px 18px rgba(233,30,99,0.15);
-=======
-        box-shadow: 0 4px 18px rgba(233,30,99,0.10);
->>>>>>> 9c828db61f6afaea3458b3636e225811e952b3bd
         border: 2px solid #ffb6c1;
         text-align: center;
         max-width: 420px;
         width: 90vw;
         margin: 1.1rem auto;
-<<<<<<< HEAD
         background-size: cover;
         background-position: center;
         position: relative;
@@ -136,10 +166,6 @@
         z-index: 1;
         pointer-events: none;
     }
-
-=======
-    }
->>>>>>> 9c828db61f6afaea3458b3636e225811e952b3bd
 </style>
 </head>
 <body>
@@ -150,7 +176,6 @@
 <div class="mensaje-cumple" id="mensajeCumple" style="display:none;">
     <h1>¡Feliz Cumpleaños, Mayo!</h1>
     <h2>Para ti 💖</h2>
-<<<<<<< HEAD
     <p>Hoy celebramos la vida de una persona maravillosa.<br>
     Que cada rosa de este día te recuerde lo especial que eres para mí.<br>
     ¡Te quiero mucho, Mayo!<br>
@@ -162,33 +187,12 @@
     <button class="btn-sorpresa" onclick="mostrarTarjetas()">Presiona aquí</button>
 </div>
 <div class="pagina-tarjetas" id="paginaTarjetas">
-
     <div class="tarjeta-mensaje" style="background-image: url('foto1.jpg')"><h3>🌟 Eres única 🌟</h3><p>No existe nadie como tú en este mundo. Tu personalidad, tu risa, tu forma de ser... todo en ti es especial y único.<br><br>Tu alegría ilumina cada lugar al que vas y tu bondad deja huella en todos los corazones. Gracias por ser auténtica, por compartir tu luz y por hacer que cada día sea mejor solo por tu presencia. ¡Nunca cambies!</p></div>
     <div class="tarjeta-mensaje" style="background-image: url('foto2.jpg')"><h3>🌈 Iluminas mi vida 🌈</h3><p>Cada día contigo es una aventura maravillosa. Tu presencia transforma los momentos ordinarios en extraordinarios.</p></div>
     <div class="tarjeta-mensaje" style="background-image: url('foto3.jpg'); background-position: center 20%"><h3>💎 Vales más que cualquier tesoro 💎</h3><p>Tu amistad, tu cariño y tu corazón bondadoso son los regalos más preciados que alguien puede tener.</p></div>
-    <div class="tarjeta-mensaje" style="background-image: url('foto4.jpg'); background-position: center 30%"><h3>🦤 Sigues volando alto 🦤</h3><p>Admiro tu fuerza, tu determinación y cómo siempre encuentras la manera de salir adelante con una sonrisa.</p></div>
+    <div class="tarjeta-mensaje foto4" style="background-image: url('foto4.jpg'); background-position: center 30%"><h3>🦤 Sigues volando alto 🦤</h3><p>Admiro tu fuerza, tu determinación y cómo siempre encuentras la manera de salir adelante con una sonrisa.</p></div>
     <div class="tarjeta-mensaje" style="background-image: url('foto5.jpg')"><h3>🌸 Que este año sea mágico 🌸</h3><p>Que cada día de este nuevo año esté lleno de sorpresas hermosas, logros increíbles y momentos de pura felicidad.</p></div>
     <div class="tarjeta-mensaje" style="background-image: url('foto6.jpg')"><h3>💝 Gracias por existir 💝</h3><p>El mundo es un lugar mejor porque tú estás en él. Gracias por ser esa persona maravillosa que alegra la vida de todos.</p></div>
-=======
-    <p>Hoy celebramos la vida de una persona maravillosa.<br>Que cada rosa de este día te recuerde lo especial que eres para mí.<br>¡Te quiero mucho, Mayo!<br>🌹🌹🌹</p>
-    <button class="btn-sorpresa" onclick="mostrarTarjetas()">Presiona aquí</button>
-</div>
-<div class="pagina-tarjetas" id="paginaTarjetas">
-    <div class="corazon-fotos">
-        <img src="foto1.jpg" alt="Foto 1">
-        <img src="foto2.jpg" alt="Foto 2">
-        <img src="foto3.jpg" alt="Foto 3">
-        <img src="foto4.jpg" alt="Foto 4">
-        <img src="foto5.jpg" alt="Foto 5">
-        <img src="foto6.jpg" alt="Foto 6">
-    </div>
-    <div class="tarjeta-mensaje"><h3>🌟 Eres única 🌟</h3><p>No existe nadie como tú en este mundo. Tu personalidad, tu risa, tu forma de ser... todo en ti es especial y único.</p></div>
-    <div class="tarjeta-mensaje"><h3>🌈 Iluminas mi vida 🌈</h3><p>Cada día contigo es una aventura maravillosa. Tu presencia transforma los momentos ordinarios en extraordinarios.</p></div>
-    <div class="tarjeta-mensaje"><h3>💎 Vales más que cualquier tesoro 💎</h3><p>Tu amistad, tu cariño y tu corazón bondadoso son los regalos más preciados que alguien puede tener.</p></div>
-    <div class="tarjeta-mensaje"><h3>🦤 Sigues volando alto 🦤</h3><p>Admiro tu fuerza, tu determinación y cómo siempre encuentras la manera de salir adelante con una sonrisa.</p></div>
-    <div class="tarjeta-mensaje"><h3>🌸 Que este año sea mágico 🌸</h3><p>Que cada día de este nuevo año esté lleno de sorpresas hermosas, logros increíbles y momentos de pura felicidad.</p></div>
-    <div class="tarjeta-mensaje"><h3>💝 Gracias por existir 💝</h3><p>El mundo es un lugar mejor porque tú estás en él. Gracias por ser esa persona maravillosa que alegra la vida de todos.</p></div>
->>>>>>> 9c828db61f6afaea3458b3636e225811e952b3bd
     <button class="btn-sorpresa" onclick="cerrarTarjetas()">Cerrar mensajes 💕</button>
 </div>
 <script>
